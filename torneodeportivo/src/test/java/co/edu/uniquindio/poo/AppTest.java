@@ -50,6 +50,13 @@ public class AppTest {
         LOG.info("Finalizando test datosNulos");
 
     }
+
+    @Test
+    public void participantesNegativos(){
+
+        assertThrows(Throwable.class, ()-> new Torneo("Copa del mundo", LocalDate.of(2024, 03, 10), LocalDate.of(2024, 03, 15),
+        LocalDate.of(2024, 04, 15), (byte) -17, (byte) 0, 0));
+    }
 }
 
     
