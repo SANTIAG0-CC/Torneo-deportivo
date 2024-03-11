@@ -31,13 +31,13 @@ public class AppTest {
         Torneo torneo = new Torneo("Copa del mundo", LocalDate.of(2024, 03, 10), LocalDate.of(2024, 03, 15),
                 LocalDate.of(2024, 04, 15), (byte) 17, (byte) 0, 0);
 
-        assertEquals("Copa del mundo", torneo.nombre());
-        assertEquals(LocalDate.of(2024, 03, 10), torneo.fechaInicio());
-        assertEquals(LocalDate.of(2024, 03, 15), torneo.fechaInicioInscripciones());
-        assertEquals(LocalDate.of(2024, 04, 15), torneo.fechaCierreInscripciones());
-        assertEquals(17, torneo.numeroParticipantes());
-        assertEquals(0, torneo.limiteEdad());
-        assertEquals(0, torneo.valorInscripcion());
+        assertEquals("Copa del mundo", torneo.getNombre());
+        assertEquals(LocalDate.of(2024, 03, 10), torneo.getFechaInicio());
+        assertEquals(LocalDate.of(2024, 03, 15), torneo.getFechaInicioInscripciones());
+        assertEquals(LocalDate.of(2024, 04, 15), torneo.getFechaCierreInscripciones());
+        assertEquals(17, torneo.getNumeroParticipantes());
+        assertEquals(0, torneo.getLimiteEdad());
+        assertEquals(0, torneo.getValorInscripcion());
 
         LOG.info("Finalizando test datosCompletos");
     }
