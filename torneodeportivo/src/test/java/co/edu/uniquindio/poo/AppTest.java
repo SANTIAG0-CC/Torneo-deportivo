@@ -12,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.time.LocalDate;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestFactory;
 
 /**
  * Unit test for simple App.
@@ -51,9 +52,25 @@ public class AppTest {
 
     @Test
     public void participantesNegativos(){
-
+        LOG.info("Iniciado test participantesNegativos");
         assertThrows(Throwable.class, ()-> new Torneo("Copa del mundo", LocalDate.of(2024, 03, 10), LocalDate.of(2024, 03, 15),
         LocalDate.of(2024, 04, 15), (byte) -17, (byte) 0, 0));
+        LOG.info("Finalizando test participantesNegativos");
+    }
+
+    @Test
+    public void limiteEdadNegativo (){
+        LOG.info("Iniciado test limiteEdadNegativo");
+        assertThrows(Throwable.class, ()-> new Torneo("Copa del mundo", LocalDate.of(2024, 03, 10), LocalDate.of(2024, 03, 15),
+        LocalDate.of(2024, 04, 15), (byte) 17, (byte) -1, 0));
+        LOG.info("Finalizando test limiteEdadNegativo");
+    }
+
+    @Test
+    public void inscripcionNegativa(){
+        LOG.info("Iniciado test limiteEdadNegativo");
+        assertThrows(Throwable.class, ()-> new Torneo("Copa del mundo", LocalDate.of(2024, 03, 10), LocalDate.of(2024, 03, 15),
+        LocalDate.of(2024, 04, 15), (byte) 17, (byte) 0, -1));
     }
 }
 
