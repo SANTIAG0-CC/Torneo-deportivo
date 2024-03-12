@@ -53,7 +53,7 @@ public class AppTest {
     @Test
     public void participantesNegativos(){
         LOG.info("Iniciado test participantesNegativos");
-        assertThrows(Throwable.class, ()-> new Torneo("Copa del mundo", LocalDate.of(2024, 03, 10), LocalDate.of(2024, 03, 15),
+        assertThrows(Throwable.class, ()-> new Torneo("Copa del mundo", LocalDate.of(2024, 05, 10), LocalDate.of(2024, 03, 15),
         LocalDate.of(2024, 04, 15), (byte) -17, (byte) 0, 0));
         LOG.info("Finalizando test participantesNegativos");
     }
@@ -61,7 +61,7 @@ public class AppTest {
     @Test
     public void limiteEdadNegativo (){
         LOG.info("Iniciado test limiteEdadNegativo");
-        assertThrows(Throwable.class, ()-> new Torneo("Copa del mundo", LocalDate.of(2024, 03, 10), LocalDate.of(2024, 03, 15),
+        assertThrows(Throwable.class, ()-> new Torneo("Copa del mundo", LocalDate.of(2024, 05, 10), LocalDate.of(2024, 03, 15),
         LocalDate.of(2024, 04, 15), (byte) 17, (byte) -1, 0));
         LOG.info("Finalizando test limiteEdadNegativo");
     }
@@ -69,8 +69,26 @@ public class AppTest {
     @Test
     public void inscripcionNegativa(){
         LOG.info("Iniciado test limiteEdadNegativo");
-        assertThrows(Throwable.class, ()-> new Torneo("Copa del mundo", LocalDate.of(2024, 03, 10), LocalDate.of(2024, 03, 15),
+        assertThrows(Throwable.class, ()-> new Torneo("Copa del mundo", LocalDate.of(2024, 05, 10), LocalDate.of(2024, 03, 15),
         LocalDate.of(2024, 04, 15), (byte) 17, (byte) 0, -1));
+    }
+
+    @Test 
+    public void inscripcionTardia(){
+        LOG.info("Iniciado test inscripcionTardia");
+        assertThrows(Throwable.class,()->new Torneo("Copa del mundo", LocalDate.of(2024, 05, 10), LocalDate.of(2024, 06, 15),
+        LocalDate.of(2024, 04, 15), (byte) 17, (byte) 0, 0));
+        LOG.info("Finalizando test inscripcionTardia");
+    }
+
+    @Test
+    public void inscripcionAnterioInicio(){
+        LOG.info("Iniciado test inscripcionAnterioInicio");
+        assertThrows(Throwable.class,()-> new Torneo("Copa del mundo", LocalDate.of(2024, 05, 10), LocalDate.of(2024, 03, 15),
+        LocalDate.of(2024, 02, 15), (byte) 17, (byte) 0, 0));
+
+        LOG.info("Finalizando test inscripcionAnterioInicio");
+
     }
 }
 

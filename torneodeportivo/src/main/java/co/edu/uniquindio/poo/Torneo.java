@@ -20,6 +20,8 @@ public class Torneo{
         assert numeroParticipantes >= (byte)0;
         assert limiteEdad >= (byte)0;
         assert valorInscripcion >= 0;
+        assert fechaInicioInscripciones.isBefore(fechaInicio)&& fechaInicio.isAfter(fechaCierreInscripciones);
+        assert fechaCierreInscripciones.isAfter(fechaInicioInscripciones);
 
         this.nombre = nombre;
         this.fechaInicio = fechaInicio;
