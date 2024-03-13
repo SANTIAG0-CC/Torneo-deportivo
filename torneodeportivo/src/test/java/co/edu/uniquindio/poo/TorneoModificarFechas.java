@@ -22,7 +22,7 @@ public class TorneoModificarFechas {
     public void  modificarFechaInicio(){
 
         LOG.info("Iniciado test modificarFechaInicio");
-        Torneo torneo = new Torneo("Copa del mundo", LocalDate.of(2024, 03, 10), LocalDate.of(2024, 03, 15),
+        Torneo torneo = new Torneo("Copa del mundo", LocalDate.of(2024, 06, 10), LocalDate.of(2024, 03, 15),
                 LocalDate.of(2024, 04, 15), (byte) 17, (byte) 0, 0);
 
         torneo.setFechaInicio(LocalDate.of(2024, 03,12));
@@ -33,7 +33,7 @@ public class TorneoModificarFechas {
 
     @Test
     public void modificarFechaInicioInscripciones(){
-        Torneo torneo = new Torneo("Copa del mundo", LocalDate.of(2024, 03, 10), LocalDate.of(2024, 03, 15),
+        Torneo torneo = new Torneo("Copa del mundo", LocalDate.of(2024, 06, 10), LocalDate.of(2024, 03, 15),
         LocalDate.of(2024, 04, 15), (byte) 17, (byte) 0, 0);
 
         torneo.setFechaInicioInscripciones(LocalDate.of(2024, 04, 15));
@@ -42,12 +42,22 @@ public class TorneoModificarFechas {
     }
     @Test
     public void modificarFechaCierreInscripciones(){
-        Torneo torneo = new Torneo("Copa del mundo", LocalDate.of(2024, 03, 10), LocalDate.of(2024, 03, 15),
+        Torneo torneo = new Torneo("Copa del mundo", LocalDate.of(2024, 06, 10), LocalDate.of(2024, 03, 15),
         LocalDate.of(2024, 04, 15), (byte) 17, (byte) 0, 0);
 
         torneo.setFechaCierreInscripciones(LocalDate.of(2024, 06, 15));
 
         assertEquals(LocalDate.of(2024, 06, 15), torneo.getFechaCierreInscripciones());
+    }
+
+    @Test
+    public void modificarFechaCierreInscripcioness(){
+        Torneo torneo = new Torneo("Copa del mundo", LocalDate.of(2024, 06, 10), LocalDate.of(2024, 03, 15),
+        LocalDate.of(2024, 04, 15), (byte) 17, (byte) 0, 0);
+
+        torneo.setFechaCierreInscripciones(LocalDate.of(2024, 02, 15));
+
+        assertEquals(LocalDate.of(2024, 02, 15), torneo.getFechaCierreInscripciones());
     }
 
 
