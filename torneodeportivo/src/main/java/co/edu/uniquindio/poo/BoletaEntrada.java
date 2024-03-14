@@ -8,9 +8,9 @@ public class BoletaEntrada {
     private LocalDate fecha;
     private LocalTime hora;
     private String nombre;
-    private int valor;
+    private float valor;
 
-    public BoletaEntrada(LocalDate fecha, LocalTime hora, String nombre, int valor){
+    public BoletaEntrada(LocalDate fecha, LocalTime hora, String nombre, float valor){
 
         assert fecha != null;
         assert hora != null;
@@ -35,7 +35,7 @@ public class BoletaEntrada {
         return nombre;
     }
 
-    public int getValor() {
+    public float getValor() {
         return valor;
     }
 
