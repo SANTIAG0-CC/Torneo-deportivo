@@ -23,15 +23,15 @@ public class AppTest {
     /**
      * Rigorous Test :-)
      */
- @Test
+    @Test
     public void datosCompletos() {
         LOG.info("Iniciado test datosCompletos");
 
-        Torneo torneo = new Torneo("Copa del mundo", LocalDate.of(2024, 03, 10), LocalDate.of(2024, 03, 15),
-                LocalDate.of(2024, 04, 15), (byte) 17, (byte) 0, 0);
+        Torneo torneo = new Torneo("Copa del mundo", LocalDate.of(2024, 05, 10),LocalDate.of(2024, 03, 15),
+        LocalDate.of(2024, 04, 15), (byte) 17, (byte) 0, 0);
 
         assertEquals("Copa del mundo", torneo.getNombre());
-        assertEquals(LocalDate.of(2024, 03, 10), torneo.getFechaInicio());
+        assertEquals(LocalDate.of(2024, 05, 10), torneo.getFechaInicio());
         assertEquals(LocalDate.of(2024, 03, 15), torneo.getFechaInicioInscripciones());
         assertEquals(LocalDate.of(2024, 04, 15), torneo.getFechaCierreInscripciones());
         assertEquals(17, torneo.getNumeroParticipantes());
@@ -40,7 +40,6 @@ public class AppTest {
 
         LOG.info("Finalizando test datosCompletos");
     }
-
     @Test 
     public void datosNulos(){
         LOG.info("Iniciado test datosNulos");
